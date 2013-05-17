@@ -3,17 +3,17 @@ class framework {
     private $enc_hash=null, $enc_type='AES-256-CBC', $iv_size=16;
 
 //--construction
-	public function __construct($db_connect=false){
-		//set encryption breeze
-		$this->breeze(1);
+    public function __construct($db_connect=false){
+        //set encryption breeze
+        $this->breeze(1);
 
         //set encryption key
         $this->set_key('bob loblaw');
 
-		//clean server objects
-		$global_items = array('server'=>$_SERVER,'session'=>$_SESSION,'post'=>$_POST,'get'=>$_GET,'files'=>$_FILES,'cookie'=>$_COOKIE);
-		foreach($global_items as $key=>$val) $this->$key = $this->convert_multi_array($val);
-	}
+        //clean server objects
+        $global_items = array('server'=>$_SERVER,'session'=>$_SESSION,'post'=>$_POST,'get'=>$_GET,'files'=>$_FILES,'cookie'=>$_COOKIE);
+        foreach($global_items as $key=>$val) $this->$key = $this->convert_multi_array($val);
+    }
 //==construction
 
 //--general functions
